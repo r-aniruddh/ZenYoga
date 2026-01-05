@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ZenYoga – Find Your Inner Peace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f7faf9;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4)
+      ),
+      url("https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      animation: fadeDown 1.5s ease;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      animation: fadeUp 2s ease;
+    }
+
+    .btn {
+      padding: 14px 35px;
+      background: #7cbf9e;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #5aa583;
+      transform: scale(1.05);
+    }
+
+    /* SECTION */
+    section {
+      padding: 80px 10%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #2f6f55;
+    }
+
+    /* YOGA POSES */
+    .poses {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .pose-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: 0.4s;
+    }
+
+    .pose-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .pose-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .pose-card h3 {
+      padding: 15px;
+      color: #2f6f55;
+    }
+
+    .pose-card p {
+      padding: 0 15px 20px;
+      font-size: 0.9rem;
+    }
+
+    /* BENEFITS */
+    .benefits {
+      background: #e9f5f0;
+    }
+
+    .benefit-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .benefit {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .benefit:hover {
+      transform: scale(1.05);
+    }
+
+    .benefit h3 {
+      margin-bottom: 10px;
+      color: #2f6f55;
+    }
+
+    /* TRAINER */
+    .trainer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .trainer img {
+      width: 300px;
+      border-radius: 50%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .trainer-info {
+      max-width: 500px;
+    }
+
+    .trainer-info h2 {
+      color: #2f6f55;
+      margin-bottom: 15px;
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.6)
+      ),
+      url("https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #2f6f55;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      section {
+        padding: 60px 6%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <h1>ZenYoga</h1>
+      <p>Balance Your Body • Calm Your Mind • Nourish Your Soul</p>
+      <button class="btn" onclick="scrollToYoga()">Start Your Journey</button>
+    </div>
+  </div>
+
+  <!-- YOGA POSES -->
+  <section id="yoga">
+    <h2 class="section-title">Popular Yoga Poses</h2>
+    <div class="poses">
+      <div class="pose-card">
+        <img src="https://plus.unsplash.com/premium_photo-1661777196224-bfda51e61cfd?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        <h3>Vrikshasana</h3>
+        <p>Improves balance and strengthens legs.</p>
+      </div>
+
+      <div class="pose-card">
+        <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        <h3>Padmasana</h3>
+        <p>Enhances meditation and mental clarity.</p>
+      </div>
+
+      <div class="pose-card">
+        <img src="https://images.unsplash.com/photo-1540206063137-4a88ca974d1a?auto=format&fit=crop&w=800&q=80">
+        <h3>Bhujangasana</h3>
+        <p>Strengthens spine and reduces stress.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="benefits">
+    <h2 class="section-title">Why Choose Yoga?</h2>
+    <div class="benefit-box">
+      <div class="benefit">
+        <h3>🧠 Mental Peace</h3>
+        <p>Reduces anxiety and improves focus.</p>
+      </div>
+      <div class="benefit">
+        <h3>💪 Strong Body</h3>
+        <p>Enhances flexibility and muscle strength.</p>
+      </div>
+      <div class="benefit">
+        <h3>❤️ Healthy Life</h3>
+        <p>Improves breathing and immunity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINER -->
+  <section>
+    <h2 class="section-title">Meet Your Trainer</h2>
+    <div class="trainer">
+      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80">
+      <div class="trainer-info">
+        <h2>Guru Ananda</h2>
+        <p>
+          Certified Yoga Instructor with 10+ years of experience.
+          Helping thousands achieve balance, peace and strength
+          through ancient yogic practices.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Start Your Yoga Journey Today</h2>
+    <button class="btn">Join Now</button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 ZenYoga | Designed by R-Aniruddh </footer>
+
+  <script>
+    function scrollToYoga() {
+      document.getElementById("yoga").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  </script>
+
+</body>
+</html>
